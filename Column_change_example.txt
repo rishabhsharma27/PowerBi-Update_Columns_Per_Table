@@ -1,17 +1,17 @@
 Steps to make the columns change according to the selected tables.
 
 Step 1:
-Import that tables so the common columns are separate but the unique columns are in a json format. 
+Import those tables so the common columns are separate but the unique columns are in a JSON format. 
 
 Step 2:
-Expand the json columns into separate columns. 
+Expand the JSON columns into separate columns. 
 
 Step 3:
 Append the columns from both tables such that only the columns relevant to that table have values, while the other columns are Null. 
-Add a columns that shows the name of the table and a unique identifier number for each table like 1, 2, etc. 
+Add a column that shows the name of the table and a unique identifier number for each table, like 1, 2, etc. 
 
 Step 4: 
-Create a parameters column from the appended table with the columns you need for each table , and change the number for each column to the same  as the unique table identifier in appended table e.g
+Create a parameters column from the appended table with the columns you need for each table, and change the number for each column to the same  as the unique table identifier in appended table e.g
 Parameter = {
     ("columns.amount", NAMEOF('Com_Table_list'[columns.amount]), 1),
     ("columns.customer_id", NAMEOF('Com_Table_list'[columns.customer_id]), 1),
@@ -20,8 +20,8 @@ Parameter = {
 }
 
 Step 5:
-Create a measure in the parameters table and make the selectedID as the table name from the appended table, and  SelectedColumnList as the all the columns form the Parameter Fields.
-User a switch case to return the unique identifer for the table as the return values for each table.  
+Create a measure in the parameters table and make the selectedID as the table name from the appended table, and  SelectedColumnList as all the columns from the Parameter Fields.
+Use a switch case to return the unique identifier for the table as the return values for each table.  
 
 ShowColumn3 = 
 VAR SelectedID = SELECTEDVALUE('Com_Table_list'[table_name]) 
@@ -46,8 +46,8 @@ Step 6:
 Map the parameter's order column to the unique identifier column in the appended table. 
 
 Step 7:
-On the 1st page add the table names in a table and then create a drill through for the table columns on a separate page.
-And then create a table the parameters as the columns. 
+On the 1st page, add the table names in a table, and then create a drill through for the table columns on a separate page.
+And then create a table with the parameters as the columns. 
 
-Know when you click on the drill through to the next page on the columns for that table are shown.  
+Now, when you click on the drill through to the next page, only the columns for that table are shown.  
  
