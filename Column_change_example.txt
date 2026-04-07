@@ -1,4 +1,4 @@
-Steps to make the columns change according to the selected tables.
+Stepwise process to make the columns change according to the selected tables.
 
 Step 1:
 Import those tables so the common columns are separate but the unique columns are in a JSON format. 
@@ -8,10 +8,10 @@ Expand the JSON columns into separate columns.
 
 Step 3:
 Append the columns from both tables such that only the columns relevant to that table have values, while the other columns are Null. 
-Add a column that shows the name of the table and a unique identifier number for each table, like 1, 2, etc. 
+Add two columns to the appended table: one column that shows the name of the table the column belongs to, and another column with a  unique identifier number for each table, like 1, 2, etc. 
 
 Step 4: 
-Create a parameters column from the appended table with the columns you need for each table, and change the number for each column to the same  as the unique table identifier in appended table e.g
+Create a parameters column from the appended table with the columns you need for each table, and change the number for each column to the same  as the unique table identifier in the appended table e.g
 Parameter = {
     ("columns.amount", NAMEOF('Com_Table_list'[columns.amount]), 1),
     ("columns.customer_id", NAMEOF('Com_Table_list'[columns.customer_id]), 1),
